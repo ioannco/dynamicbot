@@ -83,3 +83,11 @@ class Location(CreateTracker):
 
     def __str__(self):
         return f"user: {self.user}, created at {self.created_at.strftime('(%H:%M, %d %B %Y)')}"
+
+
+class Reply(models.Model):
+    button_label = models.CharField(default='button', max_length=30)
+    button_text = models.TextField(default='', max_length=200)
+
+    def __str__(self):
+        return self.button_label
